@@ -1,0 +1,92 @@
+import java.util.Scanner; //imports the Scanner class
+
+public class BookInventory{ //class for Book Inventory
+
+   
+
+    public static void main(String[] args){ //main method
+
+       
+
+        System.out.println("************************************************"); //displays messages
+
+        System.out.println("* Welcome to the Daily Book Inventory Program! *");
+
+        System.out.println("************************************************");
+
+       
+
+        Scanner sc=new Scanner(System.in); //scanner for user input
+
+        String ch,cq="Y"; //variables
+
+        int rcount=0, ccount=0, tcount=0;
+
+       
+
+        do{
+
+            System.out.println("Enter the first 12 digits of an ISBN-13 as a String:");
+
+            String isbn=sc.next(); //user input for ISBN-13 number
+
+           
+
+            if(isbn.length()!=12){ //validating the ISBN-13 number
+
+                System.out.println("The entered ISBN-13 number is invalid!");
+
+            }
+
+            else{
+
+                System.out.println("The ISBN-13 number is "+isbn); //displays the ISBN-13 number
+
+                System.out.print("\nEnter 'R' for return or 'C' for checkout: ");
+
+                ch=sc.next(); //user input for book return or checkout
+
+               
+
+                if("R".equals(ch)){ //keeps the count of book returns, checkout, and total books processed
+
+                    rcount++;
+
+                    tcount++;
+
+                }else{
+
+                    ccount++;
+
+                tcount++;
+
+            }
+
+            System.out.println("************************************************"); //displays messages
+
+            System.out.println("*            Daily Book Inventory              *");
+
+            System.out.println("************************************************");
+
+            System.out.println("Number of books returned:     "+rcount);
+
+            System.out.println("Number of books checked out: "+ccount);
+
+            System.out.println("The total of books processed: "+tcount);
+
+           
+
+            System.out.print("Enter 'Y' to continue, 'N' to quit: ");
+
+            cq=sc.next(); //user input to continue the program or not
+
+            System.out.println("");
+
+        }
+
+        }while(!cq.equals("N"));               
+
+    }
+
+}
+
